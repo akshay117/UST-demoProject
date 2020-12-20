@@ -14,7 +14,7 @@ class App extends Component {
       {
         id:2,
         title:"Titan Fall 2",
-        completed:true
+        completed:false
       },
       {
         id:3,
@@ -34,7 +34,7 @@ this.setState({todos: this.state.todos.map( todo => {
 })})
   }
 delTodo = (id) =>{
-  console.log(id)
+ 
 } 
   render(){
 

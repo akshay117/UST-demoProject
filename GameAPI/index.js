@@ -12,6 +12,9 @@
   var router = express.Router();           //get router from express.router
   require('./api/v1/games')(router);
 
+  require('./api/v1/hotels')(router);
+
+  //For partial response
 
   var app = express();                     //Create express app
  app.use(bodyParser.json());                 //Sets BodyParser

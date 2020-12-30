@@ -17,7 +17,8 @@ module.exports = function (router) {
   'use strict';
 
   router.route(URI).get(function (req, res, next) {
-    console.log("GET Games"); //1. Setup query here
+    console.log("GET Games");
+    res.header('Cache-Control', 'public'); //1. Setup query here
 
     var criteria = {
       released: {

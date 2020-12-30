@@ -13,7 +13,8 @@ module.exports = function (router) {
   'use strict';
 
   router.route(URI).get(function (req, res, next) {
-    console.log("GET Hotels"); //1. fields
+    console.log("GET Hotels");
+    res.header('Cache-Control', 'public'); //1. fields
 
     var fields = {};
 

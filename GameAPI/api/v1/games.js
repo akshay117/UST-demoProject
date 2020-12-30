@@ -16,6 +16,7 @@ var apiMessages = require('../../util/messages')
 
     router.route(URI).get(function(req, res,next){
         console.log("GET Games")
+        res.header('Cache-Control','public')
 
         //1. Setup query here
         var criteria = {released : {$lte : new Date()}}

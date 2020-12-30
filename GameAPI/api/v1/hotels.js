@@ -13,6 +13,7 @@ module.exports = function(router){
 
     router.route(URI).get(function(req, res,next){
         console.log("GET Hotels")
+        res.header('Cache-Control','public')
         
         //1. fields
         var fields ={}

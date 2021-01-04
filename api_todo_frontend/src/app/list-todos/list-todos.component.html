@@ -1,0 +1,34 @@
+           <h3> Game Reminder </h3>
+
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Game Description</th>
+        <th>Play Date</th>
+        <th>Has Played the Game?</th>
+        <th>Update Session</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--   for (Todo todo: todos) {  -->
+              <tr *ngFor="let todo of todos">
+                <td>{{todo.description}}</td>
+                <td>{{todo.targetDate | date | uppercase}}</td>
+                <td>{{todo.done}}</td>
+                <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button></td>
+                <td><button (click)="deleteTodo(todo.id)" class="btn btn-warning">Delete</button></td>
+              </tr>
+      <!-- } -->
+    </tbody>
+
+  </table>
+
+  <div class="row">
+      <button (click)="addTodo()" class="btn btn-success">Add</button>
+  </div>
+
+</div>

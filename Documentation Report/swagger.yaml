@@ -1,0 +1,124 @@
+      swagger: "2.0"
+
+info: 
+  version: "0.0.1"
+  title: Game DB API
+  description: This specification is for the game API information. By using this API  different details of games stored in the Db can be acquired.
+  
+  contact:
+    name: GAME DB API
+    url:  https://gameplaytimeapiazure.z7.web.core.windows.net/login
+    email: admin@gamelab.com
+  
+  license:
+    name: GAME DB API
+    url: https://gameplaytimeapiazure.z7.web.core.windows.net/login
+    
+host : localhost:3000
+basePath: /v1/
+schemes:
+ - http
+ - https
+ 
+consumes:
+ - application/json
+#format of the responses to the client
+produces:
+ - application/json
+ 
+tags:
+ - name: "GameInfo"
+   description : refer to the api documentation for game information
+ 
+ - name: "Game Review Update"
+   description : refer to the api documentation for game review update
+   
+ - name: "Game list"
+   description : refer to the api documentation for game library list
+   
+definitions:
+  GeneralError:
+    required:
+     - message
+    properties:
+      message:
+        type: string
+        
+        
+  NotFoundError:
+    required:
+     - message
+     - hint
+    properties:
+      message:
+        type: string
+      hint:
+        type: string
+  
+ 
+path:
+  /GameInfo:
+        #GameAPI Library 
+        GameInformation:
+             required:
+                  - name
+                  - description
+                  - done
+                  - targetDate
+        properties:
+              name:
+                type: string
+        description:
+                type: string
+               done:
+                type: boolean
+         targetDate:
+                type: date
+
+
+#parameter Definitions
+#common paramers used int he operations
+parameters:
+  IdInPath:
+    name: id
+    #in: path
+    type: string
+    required: true
+    
+#security definitions
+securityDefinitions:
+  KeySecurity:
+    type: apiKey
+    in: query
+    name: api_key
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
